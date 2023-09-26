@@ -1,19 +1,21 @@
 package org.canopee.rover;
 
+import org.canopee.rover.config.PlateauConfig;
 import org.canopee.rover.config.RoverFileParser;
 
 import java.io.IOException;
 
 public class RoverApplication {
     public static void main(String[] args) throws IOException {
+        validateArgs(args);
 
-        var roverConfig = new RoverFileParser(args[0]).parse();
-        roverConfig.commandsByRover()
+        new RoverFileParser(args[0]).init();
+        PlateauConfig.INSTANCE.commandByRovers()
                 .forEach(
                         (rover, commands) -> commands.forEach(rover::executeCommands)
                 );
 
-        roverConfig.printCurrentRoversPosition();
+        PlateauConfig.INSTANCE.printCurrentRoversPosition();
     }
 
     private static void validateArgs(String[] args) {

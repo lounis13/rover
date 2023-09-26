@@ -7,43 +7,43 @@ import org.canopee.rover.domain.Rover;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.TreeMap;
 
 public class RoverFileParser {
-
-
     private final String filePath;
 
     public RoverFileParser(String filePath) {
         this.filePath = filePath;
     }
 
-    public RoverConfig parse() throws IOException {
+    public void init() throws IOException {
         File inputFile = new File(filePath);
-        List<Rover> rovers = new ArrayList<>();
-        TreeMap<Rover, List<Command>> roverCommands = new TreeMap<>(Comparator.comparingInt(o -> o.id));
+        TreeMap<Rover, List<Command>> roverCommands = new TreeMap<>();
 
         try (var scanner = new Scanner(inputFile)) {
 
-            var xSize = scanner.nextInt();
-            var ySize = scanner.nextInt();
+            var width = scanner.nextInt();
+            var height = scanner.nextInt();
             scanner.nextLine();
 
             while (scanner.hasNext()) {
-                roverCommands.put(initiateRover(scanner, xSize, ySize), parseCommands(scanner));
+                roverCommands.put(initiateRover(scanner), parseCommands(scanner));
             }
 
-            return new RoverConfig(xSize, ySize, rovers, roverCommands);
+            PlateauConfig.INSTANCE.initialize(width, height, roverCommands);
         }
     }
 
-    private Rover initiateRover(Scanner scanner, int xSize, int ySize) {
+    private Rover initiateRover(Scanner scanner) {
         int x = scanner.nextInt();
         int y = scanner.nextInt();
         Orientation orientation = getOrientation(scanner.next());
         scanner.nextLine();
 
-        return new Rover(new Position(x, y), orientation, xSize, ySize);
+        return new Rover(new Position(x, y), orientation);
     }
 
     private List<Command> parseCommands(Scanner scanner) {
@@ -56,11 +56,7 @@ public class RoverFileParser {
     }
 
     private Orientation getOrientation(String orientationStr) {
-        try {
-            return Orientation.valueOf(orientationStr);
-        } catch (IllegalArgumentException ex) {
-            throw new IllegalArgumentException("Invalid orientation: " + orientationStr);
-        }
+        return Orientation.valueOf(orientationStr);
     }
 }
 

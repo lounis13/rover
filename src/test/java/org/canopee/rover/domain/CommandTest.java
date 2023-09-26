@@ -1,12 +1,9 @@
 package org.canopee.rover.domain;
 
-import org.canopee.rover.domain.Command;
-import org.canopee.rover.domain.Orientation;
-import org.canopee.rover.domain.Position;
-import org.canopee.rover.domain.Rover;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CommandTest {
 
@@ -15,7 +12,7 @@ public class CommandTest {
     @BeforeEach
     public void setup() {
         // Setting up a default position and orientation for the rover for each test
-        rover = new Rover(new Position(0, 0), Orientation.N, 5, 5);
+        rover = new Rover(new Position(0, 0), Orientation.N);
     }
 
     @Test
