@@ -1,10 +1,9 @@
-package org.canopee.config;
+package org.canopee.rover.config;
 
-import org.canopee.rover.Command;
-import org.canopee.rover.Rover;
+import org.canopee.rover.domain.Command;
+import org.canopee.rover.domain.Rover;
 
 import java.util.List;
-import java.util.Map;
 import java.util.TreeMap;
 
 public record RoverConfig(int xSize,

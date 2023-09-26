@@ -1,4 +1,4 @@
-package org.canopee.rover;
+package org.canopee.rover.domain;
 
 public enum Orientation {
     N, E, S, W;

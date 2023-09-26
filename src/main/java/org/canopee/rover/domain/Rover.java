@@ -1,4 +1,4 @@
-package org.canopee.rover;
+package org.canopee.rover.domain;
 
 import java.util.Objects;
 

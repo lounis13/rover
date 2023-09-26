@@ -1,9 +1,9 @@
-package org.canopee.config;
+package org.canopee.rover.config;
 
-import org.canopee.rover.Command;
-import org.canopee.rover.Orientation;
-import org.canopee.rover.Position;
-import org.canopee.rover.Rover;
+import org.canopee.rover.domain.Command;
+import org.canopee.rover.domain.Orientation;
+import org.canopee.rover.domain.Position;
+import org.canopee.rover.domain.Rover;
 
 import java.io.File;
 import java.io.IOException;

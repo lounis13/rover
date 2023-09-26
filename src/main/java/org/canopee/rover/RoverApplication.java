@@ -1,6 +1,6 @@
-package org.canopee;
+package org.canopee.rover;
 
-import org.canopee.config.RoverFileParser;
+import org.canopee.rover.config.RoverFileParser;
 
 import java.io.IOException;
 

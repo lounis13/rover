@@ -1,5 +1,6 @@
-package org.canopee.rover;
+package org.canopee.rover.domain;
 
+import org.canopee.rover.domain.Position;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

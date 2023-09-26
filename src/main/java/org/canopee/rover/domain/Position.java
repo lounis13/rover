@@ -1,4 +1,4 @@
-package org.canopee.rover;
+package org.canopee.rover.domain;
 
 public record Position(int x, int y) {
     public Position {

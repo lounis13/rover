@@ -1,5 +1,6 @@
-package org.canopee;
+package org.canopee.rover;
 
+import org.canopee.rover.RoverApplication;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;

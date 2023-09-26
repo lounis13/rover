@@ -1,5 +1,9 @@
-package org.canopee.rover;
+package org.canopee.rover.domain;
 
+import org.canopee.rover.domain.Command;
+import org.canopee.rover.domain.Orientation;
+import org.canopee.rover.domain.Position;
+import org.canopee.rover.domain.Rover;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

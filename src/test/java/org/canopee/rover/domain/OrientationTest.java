@@ -1,8 +1,8 @@
-package org.canopee.rover;
+package org.canopee.rover.domain;
 
 import org.junit.jupiter.api.Test;
 
-import static org.canopee.rover.Orientation.*;
+import static org.canopee.rover.domain.Orientation.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class OrientationTest {
