@@ -29,6 +29,24 @@
             <version>${junit-jupiter-engine.version}</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
+
+    <build>
+        <finalName>rover</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>org.canopee.rover.RoverApplication</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
