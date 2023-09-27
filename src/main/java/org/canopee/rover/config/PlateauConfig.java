@@ -12,7 +12,7 @@ public enum PlateauConfig {
 
     INSTANCE;
 
-    public static int currentRoverSequence = 0;
+    private static int currentRoverSequence = 0;
 
 
     private int width = 5;
