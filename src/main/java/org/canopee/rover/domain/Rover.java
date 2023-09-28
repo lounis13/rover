@@ -34,10 +34,10 @@ public class Rover implements Comparable<Rover> {
 
     public void moveForward() {
         position = switch (orientation) {
-            case N -> position.incY();
-            case E -> position.incX();
-            case S -> position.decY();
-            case W -> position.decX();
+            case N -> position.moveUp();
+            case E -> position.moveRight();
+            case S -> position.moveDown();
+            case W -> position.moveLeft();
         };
     }
 

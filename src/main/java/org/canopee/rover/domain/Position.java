@@ -12,19 +12,19 @@ public record Position(int x, int y) {
         }
     }
 
-    public Position incX() {
+    public Position moveRight() {
         return new Position(x + 1, y);
     }
 
-    public Position incY() {
+    public Position moveUp() {
         return new Position(x, y + 1);
     }
 
-    public Position decX() {
+    public Position moveLeft() {
         return new Position(x - 1, y);
     }
 
-    public Position decY() {
+    public Position moveDown() {
         return new Position(x, y - 1);
     }
 

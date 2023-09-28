@@ -22,9 +22,7 @@ public class RoverFileParser {
     public void init() throws IOException {
         File inputFile = new File(filePath);
         TreeMap<Rover, List<Command>> roverCommands = new TreeMap<>();
-
         try (var scanner = new Scanner(inputFile)) {
-
             var width = scanner.nextInt();
             var height = scanner.nextInt();
             scanner.nextLine();
@@ -32,7 +30,6 @@ public class RoverFileParser {
             while (scanner.hasNext()) {
                 roverCommands.put(initiateRover(scanner), parseCommands(scanner));
             }
-
             PlateauConfig.INSTANCE.initialize(width, height, roverCommands);
         }
     }

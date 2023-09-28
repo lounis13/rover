@@ -20,7 +20,7 @@ class PositionTest {
     @Test
     void should_returnNewPositionWithIncrementedX_when_incXIsCalled() {
         Position initialPosition = new Position(1, 1);
-        Position incrementedPosition = initialPosition.incX();
+        Position incrementedPosition = initialPosition.moveRight();
 
         assertEquals(new Position(2, 1), incrementedPosition);
     }
@@ -28,7 +28,7 @@ class PositionTest {
     @Test
     void should_returnNewPositionWithIncrementedY_when_incYIsCalled() {
         Position initialPosition = new Position(1, 1);
-        Position incrementedPosition = initialPosition.incY();
+        Position incrementedPosition = initialPosition.moveUp();
 
         assertEquals(new Position(1, 2), incrementedPosition);
     }
@@ -36,7 +36,7 @@ class PositionTest {
     @Test
     void should_returnNewPositionWithDecrementedX_when_decXIsCalled() {
         Position initialPosition = new Position(1, 1);
-        Position decrementedPosition = initialPosition.decX();
+        Position decrementedPosition = initialPosition.moveLeft();
 
         assertEquals(new Position(0, 1), decrementedPosition);
     }
@@ -44,7 +44,7 @@ class PositionTest {
     @Test
     void should_returnNewPositionWithDecrementedY_when_decYIsCalled() {
         Position initialPosition = new Position(1, 1);
-        Position decrementedPosition = initialPosition.decY();
+        Position decrementedPosition = initialPosition.moveDown();
 
         assertEquals(new Position(1, 0), decrementedPosition);
     }
